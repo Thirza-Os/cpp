@@ -2,7 +2,7 @@
 #include <string>
 #include <cctype>
 
-int main2(int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	std::string	ret;
 	int		i;

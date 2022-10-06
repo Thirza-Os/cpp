@@ -3,9 +3,13 @@
 int main(void)
 {
 	Phonebook	MyBook;
+	std::string	input;
 
-	MyBook.num = 10;
-	MyBook.Contacts[0] = "name";
+    std::cout << "What is your name: ";
+	std::cin >> input;
 
-	return(0);
+	// MyBook.num = 10;
+	MyBook.Contacts[0].first_name = input;
+
+	return (0);
 }
