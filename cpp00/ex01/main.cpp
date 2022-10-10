@@ -1,15 +1,15 @@
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
+#include "Contact.hpp"
 
 int main(void)
 {
 	Phonebook	MyBook;
 	std::string	input;
 
-    std::cout << "What is your name: ";
-	std::cin >> input;
-
-	// MyBook.num = 10;
-	MyBook.Contacts[0].first_name = input;
-
+	while (std::cout << "MyPhonebook$> ", std::getline(std::cin, input))
+	{
+		if (input == "ADD")
+			MyBook.add_contact();
+	}
 	return (0);
 }
