@@ -1,13 +1,15 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 #include "Contact.hpp"
+
+//instanciating PhonBook will call te constructer automatically
 
 int main(void)
 {
-	Phonebook	MyBook;
+	PhoneBook	MyBook;
 	std::string	input;
 
     MyBook.welcome();
-	while (std::cout << "MyPhonebook$> ", std::getline(std::cin, input))
+	while (std::cout << "MyPhoneBook$> ", std::getline(std::cin, input))
 	{
 		if (!input.compare("ADD"))
 			MyBook.add_contact();

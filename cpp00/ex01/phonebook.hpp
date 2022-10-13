@@ -5,23 +5,21 @@
 #include <iostream>
 #include "Contact.hpp"
 
-class Phonebook{
+class PhoneBook{
 
 	private:
-	int		index;
-	Contact	contacts[8];
+		int		index;
+		Contact	contacts[8];
 
-	int	pick_contact();
+		int	pick_contact();
 
 	public:
-	Phonebook(); // Constructor
-	~Phonebook(); // Destructor
+		PhoneBook(); // Constructor
+		~PhoneBook(); // Destructor
 
-	void	welcome();
-	void	add_contact();
-	void	search_contact();
-
-	// void	exit_phonebook();
+	void	welcome(void);
+	void	add_contact(void);
+	void	search_contact(void);
 
 };
 

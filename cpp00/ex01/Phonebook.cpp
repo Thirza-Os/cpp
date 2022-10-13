@@ -1,27 +1,27 @@
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
-Phonebook::Phonebook()
+PhoneBook::PhoneBook()
 {
 	this->index = 0;
 }
 
-Phonebook::~Phonebook()
+PhoneBook::~PhoneBook()
 {
 
 }
 
-void	Phonebook::welcome(void)
+void	PhoneBook::welcome(void)
 {
 	std::cout << "********************************************************************************" << std::endl << std::endl;
-	std::cout << "            Welcome to your awsome phonebook! You are awesome!" << std::endl << std::endl;
+	std::cout << "            Welcome to your awsome PhoneBook! You are awesome!" << std::endl << std::endl;
 	std::cout << "Please enter \"ADD\" \"SEARCH\" or \"EXIT\"." << std::endl << std::endl;
 	std::cout << "\"ADD\" allwos you to add a contact." << std::endl;
-	std::cout << "\"SEARCH\" will display your phonebook and allows you to search for a contact." << std::endl;
-	std::cout << "\"EXIT\" will exit the phonebook :(." << std::endl << std::endl;
+	std::cout << "\"SEARCH\" will display your PhoneBook and allows you to search for a contact." << std::endl;
+	std::cout << "\"EXIT\" will exit the PhoneBook :(." << std::endl << std::endl;
 	std::cout << "********************************************************************************" << std::endl << std::endl;
 }
 
-void    Phonebook::add_contact(void)
+void    PhoneBook::add_contact(void)
 {
 
 	if (this->index == 8)
@@ -31,7 +31,7 @@ void    Phonebook::add_contact(void)
 	return ;
 }
 
-int		Phonebook::pick_contact(void)
+int		PhoneBook::pick_contact(void)
 {
 	int	ret;
 
@@ -47,7 +47,7 @@ int		Phonebook::pick_contact(void)
 	return(ret);
 }
 
-void    Phonebook::search_contact(void)
+void    PhoneBook::search_contact(void)
 {
 	int	i;
 

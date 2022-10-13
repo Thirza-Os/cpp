@@ -1,13 +1,13 @@
 NAME 	=	phonebook
 
 SRC		=	Main.cpp \
-			Phonebook.cpp \
+			PhoneBook.cpp \
 			Contact.cpp
 
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror
-HEADER	=	Phonebook.hpp \
+HEADER	=	PhoneBook.hpp \
 			Contact.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
