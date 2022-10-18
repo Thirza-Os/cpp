@@ -2,9 +2,9 @@
 
 // const and dest are producers: they dont return (return to show you are done)
 
-Zombie::Zombie(std::string name): _name(name)
+Zombie::Zombie()
 {
-    std::cout << "ZOMBIE TIMEEEE: " << this->_name << " has risen from the dead" << std::endl;
+    std::cout << "ZOMBIE TIMEEEE rising from the dead" << std::endl;
     return ;
 }
 
@@ -19,3 +19,8 @@ void    Zombie::announce(void)
     return ;
 }
 
+void    Zombie::name_zombie(std::string name)
+{
+    this->_name = name;
+    return ;
+}
