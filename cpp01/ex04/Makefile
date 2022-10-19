@@ -1,15 +1,11 @@
-NAME 	=	violence
+NAME 	=	streaming
 
-SRC		=	main.cpp \
-			Weapon.cpp \
-			HumanA.cpp \
-			HumanB.cpp
+SRC		=	stream.cpp
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror
-HEADER	=	Weapon.hpp \
-			HumanA.hpp \
-			HumanB.hpp
+
+HEADER	=	stream.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
 
