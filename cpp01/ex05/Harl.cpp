@@ -1,5 +1,5 @@
 #include "Harl.hpp"
-
+// pointer to function: points to a function of a specific type.
 // pointer to member functions are different from regular functions because
 // member have a this-> function on which they rest.
 //  int (A::*x)(void) = &A::f;
@@ -35,12 +35,11 @@ void    Harl::warning(void)
 
 void    Harl::complain(std::string level)
 {
-    // void (Harl::*point[])() = 
-    {
+        void (Harl::*point_t[4])(void) = {
         &Harl::warning,
         &Harl::info,
         &Harl::debug,
-        &Harl::error     
+        &Harl::error  
     };
 
     std::string levels[] = {"WARNING", "INFO", "DEBUG", "ERROR"};
@@ -48,6 +47,6 @@ void    Harl::complain(std::string level)
     for (int i = 0; i < 4; i++)
     {
         if (level == levels[i])
-            this->*point[i]();
+            (this->*point_t[i])();
     }
 }

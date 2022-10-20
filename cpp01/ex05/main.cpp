@@ -3,8 +3,15 @@
 int main(void)
 {
     Harl harlietje;
-    std::string level = "level";
+    std::string info = "INFO";
+    std::string debug = "DEBUG";
+    std::string warning = "WARNING";
+    std::string error = "ERROR";
     
-    harlietje.complain(level);
+    harlietje.complain(info);
+    harlietje.complain(debug);
+    harlietje.complain(warning);
+    harlietje.complain(error);
+
     return (0);
 }
