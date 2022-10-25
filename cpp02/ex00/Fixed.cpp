@@ -3,9 +3,10 @@
 // The purpose of a copy assignment operator:
 // Initialize an existing object to the values supplied by another existing object.
 
-Fixed::Fixed(): _raw_bits(0)
+Fixed::Fixed()
 {
     std::cout << "Constructor called" << std::endl;
+    this->setRawBits(0);
 }
 
 //first option does not call assignment operator
