@@ -21,12 +21,11 @@ public:
     void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
+
+    //getters
+    int     getHitPoints(void);
+    int     getEnergyPoints(void);
+    int     getAttackDamage(void);
 };
-
-
-
-
-#include <string>
-#include <iostream>
 
 #endif

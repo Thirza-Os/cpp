@@ -6,14 +6,24 @@ int main(int argc, char *argv[])
 {
 	std::string	ret;
 	int		i;
-
-	if (argc > 1)
-	{
-		if (argv[1][0] == '\0')
+	int		counter;
+	if (argc == 1)
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		i = 1;
+		counter = 0;
+		while (i < argc)
+		{
+			if (argv[i][0] == '\0')
+			{
+				counter++;
+				i++;
+			}
+			else
+				break;
+		}
+		if (counter == argc - 1)
 			return (0);
-		else if (argc == 1)
-			std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		else
+		if (argc > 1)
 		{
 			for (i = 1; i < argc; i++)
 			{
@@ -24,6 +34,5 @@ int main(int argc, char *argv[])
 			std::transform(ret.begin(), ret.end(), ret.begin(), ::toupper);
 			std::cout << ret << std::endl;
 		}
-	}
 	return (0);
 }
