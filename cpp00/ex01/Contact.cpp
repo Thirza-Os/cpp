@@ -1,7 +1,6 @@
     #include "Contact.hpp"
     
 // change order: once all fields completed, add to contacts
-//empty input still visible in phonebook
 
    Contact::Contact()
     {
@@ -14,7 +13,14 @@
     bool    Contact::valid_input(void)
     {
         if (this->first_name.empty() || this->last_name.empty() || this->nick_name.empty() || this->darkest_secret.empty() || this->phone_number.empty())
+        {
+            this->first_name.clear();
+            this->last_name.clear();
+            this->nick_name.clear();
+            this->darkest_secret.clear();
+            this->phone_number.clear();
             return (0);
+        }
         return (1);
     }
 
@@ -45,11 +51,11 @@
             std::cout << "This is an empty contact field!" << std::endl;
             return ;
         }
-        std::cout << this->first_name << std::endl;
-        std::cout << this->last_name << std::endl;
-        std::cout << this->nick_name << std::endl;
-        std::cout << this->phone_number << std::endl;
-        std::cout << this->darkest_secret << std::endl;
+        std::cout << "First Name:   " << this->first_name << std::endl;
+        std::cout << "Last Name:    "  << this->last_name << std::endl;
+        std::cout << "Nick Name:    " << this->nick_name << std::endl;
+        std::cout << "Phone Number: " << this->phone_number << std::endl;
+        std::cout << "Secret:       " << this->darkest_secret << std::endl;
     }
 
     void    Contact::format_contacts_display() const

@@ -1,13 +1,13 @@
-NAME 	=	inheritage
+NAME 	=	ScavTrap
 
 SRC		=	main.cpp \
 			ClapTrap.cpp \
 			ScavTrap.cpp
 
 CC		=	g++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 HEADER	=	ClapTrap.hpp \
-			ScavTrap.cpp
+			ScavTrap.hpp
 
 
 OBJECTS	=	$(SRC:.cpp=.o)

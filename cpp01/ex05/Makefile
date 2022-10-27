@@ -4,7 +4,7 @@ SRC		=	main.cpp \
 			Harl.cpp
 
 CC		=	g++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 HEADER	=	Harl.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)

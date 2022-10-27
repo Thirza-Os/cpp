@@ -5,7 +5,7 @@ SRC		=	main.cpp \
 			zombieHorde.cpp
 
 CC		=	g++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 HEADER	=	Zombie.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)

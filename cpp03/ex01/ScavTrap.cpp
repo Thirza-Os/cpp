@@ -7,6 +7,7 @@
 
 	ScavTrap::ScavTrap(std::string name)
 	{	
+		this->_name = name;
 		this->_attackDamage	= 20;
     	this->_energyPoints	= 50;
     	this->_hitPoints	= 100;
@@ -17,6 +18,19 @@
 	{
 		std::cout << "ScavTrap destructor is called!" << std::endl;
 	}
+
+	ScavTrap& ScavTrap::operator=(ScavTrap& other)
+{
+    if (this != &other)
+    {
+        this->_name = other._name;
+        this->_attackDamage = other._attackDamage;
+        this->_energyPoints = other._energyPoints;
+        this->_hitPoints = other._hitPoints;
+    }
+    std::cout << "assignment operator called" << std::endl;
+    return (*this);
+}
 
 void    ScavTrap::attack(const std::string& target)
 {

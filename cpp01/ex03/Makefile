@@ -6,7 +6,7 @@ SRC		=	main.cpp \
 			HumanB.cpp
 
 CC		=	g++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 HEADER	=	Weapon.hpp \
 			HumanA.hpp \
 			HumanB.hpp

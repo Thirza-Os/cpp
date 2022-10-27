@@ -3,7 +3,7 @@ NAME 	=	streaming
 SRC		=	stream.cpp
 
 CC		=	g++
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
 HEADER	=	stream.hpp
 
