@@ -1,11 +1,11 @@
 NAME 	=	streaming
 
-SRC		=	stream.cpp
+SRC		=	Stream.cpp
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-HEADER	=	stream.hpp
+HEADER	=	Stream.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
 

@@ -1,5 +1,6 @@
-#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
+// allocate N size on the heap in an array, fill array with named zombies
 Zombie  *zombieHorde(int N, std::string name)
 {
     int i;

@@ -1,9 +1,11 @@
 #include "HumanA.hpp"
 
+// constructor that takes weapon
 HumanA::HumanA(std::string name, Weapon &weapon_a): _name(name), _weapon_a(weapon_a)
 {
 	this->_weapon_a = weapon_a;
 	this->_name = name;
+	std::cout << "constructer HumanA called" << std::endl;
 }
 
 HumanA::~HumanA()

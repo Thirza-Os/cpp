@@ -17,7 +17,7 @@ private:
 public:
     Harl();
     ~Harl();
-
+	// public member function calling private member function
 	void complain(std::string level);
 };
 

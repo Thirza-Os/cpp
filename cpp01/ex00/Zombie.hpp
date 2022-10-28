@@ -13,11 +13,12 @@ class Zombie{
         Zombie(std::string name);
         ~Zombie();
 
+        //Member function declaration
         void    announce(void);
 };
 
+    // functions
     Zombie  *newZombie(std::string name);
-    void    randomChump(std::string name);
-    Zombie* zombieHorde( int N, std::string name );
+    void    RandomChump(std::string name);
 
 #endif

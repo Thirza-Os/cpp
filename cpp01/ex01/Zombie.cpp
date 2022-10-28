@@ -1,7 +1,6 @@
-#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 
 // const and dest are producers: they dont return (return to show you are done)
-
 Zombie::Zombie()
 {
     std::cout << "ZOMBIE TIMEEEE rising from the dead" << std::endl;

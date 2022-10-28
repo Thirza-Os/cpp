@@ -2,11 +2,11 @@ NAME 	=	zombieHorde
 
 SRC		=	main.cpp \
 			Zombie.cpp \
-			zombieHorde.cpp
+			ZombieHorde.cpp
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-HEADER	=	Zombie.hpp
+HEADER	=	ZombieHorde.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
 

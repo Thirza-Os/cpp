@@ -3,7 +3,7 @@ NAME 	=	zombie
 SRC		=	main.cpp \
 			Zombie.cpp \
 			newZombie.cpp \
-			randomChump.cpp \
+			RandomChump.cpp \
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98

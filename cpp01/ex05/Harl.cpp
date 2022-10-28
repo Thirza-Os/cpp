@@ -35,15 +35,18 @@ void    Harl::warning(void)
 
 void    Harl::complain(std::string level)
 {
+        // pointer called point_t that points to the four different member functions
         void (Harl::*point_t[4])(void) = {
         &Harl::warning,
         &Harl::info,
         &Harl::debug,
         &Harl::error  
     };
-
+    
+    // string to traverse through in order to get the corresponding function (same order as above)
     std::string levels[] = {"WARNING", "INFO", "DEBUG", "ERROR"};
 
+    // loop through the levels, execute the corresponding function with correct array index
     for (int i = 0; i < 4; i++)
     {
         if (level == levels[i])

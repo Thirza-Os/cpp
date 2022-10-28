@@ -4,35 +4,22 @@
 
 int main(int argc, char *argv[])
 {
-	std::string	ret;
-	int		i;
-	int		counter;
-	if (argc == 1)
+	std::string	buffer;
+
+	if (argc < 2)
+	{
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-		i = 1;
-		counter = 0;
-		while (i < argc)
-		{
-			if (argv[i][0] == '\0')
-			{
-				counter++;
-				i++;
-			}
-			else
-				break;
-		}
-		if (counter == argc - 1)
-			return (0);
-		if (argc > 1)
-		{
-			for (i = 1; i < argc; i++)
-			{
-				if (argv[i] == '\0')
-					i++;
-				ret = ret + argv[i];
-			}
-			std::transform(ret.begin(), ret.end(), ret.begin(), ::toupper);
-			std::cout << ret << std::endl;
-		}
+		return (0);
+	}
+	for (int i = 1; i < argc; i++)
+	{
+		if (argv[i] == '\0')
+			i++;
+		buffer += argv[i];
+	}
+	for (size_t i = 0; i < buffer.length(); i++)
+		std::cout << (char)std::toupper(buffer[i]);
+	if (!buffer.empty())
+		std::cout << std::endl;
 	return (0);
 }

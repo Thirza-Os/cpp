@@ -1,4 +1,4 @@
-#include "Zombie.hpp"
+#include "ZombieHorde.hpp"
 //a pointer to a bound function may only be used to call the functionC/C++(300)
 // means: missing ()
 
@@ -9,25 +9,28 @@
 
 // for deleting an array use []
 
-int main2(void)
+int main(void)
 {
     // Zombie zombie;
     int i;
 
     Zombie *zombie;
-    zombie = zombieHorde(4, "hoi");
+    zombie = zombieHorde(4, "ZOMBIE-GUY");
 
     for (i = 0; i < 4; i++)
     {
         zombie[i].announce();
     }
+    // delete entire array
     delete [] zombie;
     return (0);
 }
 
-int main(void)
-{
-    main2();
-    while(1);
-    return (0);
-}
+                                // main for leaks checking
+
+// int main(void)
+// {
+//     main2();
+//     while(1);
+//     return (0);
+// }

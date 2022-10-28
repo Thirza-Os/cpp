@@ -5,12 +5,20 @@
 
 int main(void)
 {
-    Zombie  zombiones = Zombie("thirza");
+    // stack (initiate class with constructor)
+    Zombie  thirza = Zombie("thirza");
+    thirza.announce();
 
-    zombiones.announce();
-    Zombie *another = newZombie("Jelmer");
-    another->announce();
-    delete (another);
+    Zombie  trying = Zombie("trying");
+    trying.announce();
+
+
+    // heap (initiate zombie with dynamic memory allocation)
+    Zombie *dead_person = newZombie("Dead_person");
+    dead_person->announce();
+    delete (dead_person);
+
+    // stack (same as first but announces itself)
     randomChump("idiot");
     return (0);
 }

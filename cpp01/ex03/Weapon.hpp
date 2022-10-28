@@ -13,6 +13,7 @@ public:
 	Weapon(std::string const & type);
 	~Weapon();
 
+	// member functions
 	void					setType(std::string type_name);
 	std::string const & 	getType() const;
 };
