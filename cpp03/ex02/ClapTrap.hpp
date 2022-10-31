@@ -25,9 +25,10 @@ public:
     void    beRepaired(unsigned int amount);
 
     //getters
-    int     getHitPoints(void);
-    int     getEnergyPoints(void);
-    int     getAttackDamage(void);
+    std::string getName(void);
+    int         getHitPoints(void);
+    int         getEnergyPoints(void);
+    int         getAttackDamage(void);
 };
 
 #endif

@@ -5,6 +5,7 @@ int main(void)
     ClapTrap THIRZA("THIRZA");
     ClapTrap JELMER("JELMER");
     ClapTrap MO("MO");
+    // MO = JELMER;
     // example3 = example_2;
 
     std::cout << "JELMER attack points     " << JELMER.getAttackDamage() << std::endl;

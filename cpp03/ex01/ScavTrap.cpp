@@ -1,11 +1,17 @@
 #include "ScavTrap.hpp"
 
-	ScavTrap::ScavTrap()
+// constructor/destructor exlicitely calling the parent constructor and explicitely child constructors.
+	ScavTrap::ScavTrap(): ClapTrap()
 	{	
 		std::cout << "ScavTrap constructor is called! " << std::endl;
 	}
 
-	ScavTrap::ScavTrap(std::string name)
+	ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy)
+	{
+		std::cout << "copy constructor ScavTrap called" << std::endl;
+	}
+
+	ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	{	
 		this->_name = name;
 		this->_attackDamage	= 20;
@@ -14,23 +20,24 @@
 		std::cout << "ScavTrap constructor is called! " << name << std::endl;
 	}
 
+
+	ScavTrap& ScavTrap::operator=(ScavTrap& other)
+	{
+		if (this != &other)
+		{
+			this->_name = other._name;
+			this->_attackDamage = other._attackDamage;
+			this->_energyPoints = other._energyPoints;
+			this->_hitPoints = other._hitPoints;
+		}
+		std::cout << "assignment operator called" << std::endl;
+		return (*this);
+	}
+
 	ScavTrap::~ScavTrap()
 	{
 		std::cout << "ScavTrap destructor is called!" << std::endl;
 	}
-
-	ScavTrap& ScavTrap::operator=(ScavTrap& other)
-{
-    if (this != &other)
-    {
-        this->_name = other._name;
-        this->_attackDamage = other._attackDamage;
-        this->_energyPoints = other._energyPoints;
-        this->_hitPoints = other._hitPoints;
-    }
-    std::cout << "assignment operator called" << std::endl;
-    return (*this);
-}
 
 void    ScavTrap::attack(const std::string& target)
 {

@@ -4,10 +4,11 @@
 
 int main(void)
 {
-    // ClapTrap();
+    ClapTrap();
     ClapTrap THIRZA("THIRZA");
-    // ScavTrap thirza;
+    ScavTrap thirza; //making scavtrap with scavtrap constructor
     ScavTrap JELMER("JELMER"); 
+    FragTrap Mo; // making fragtrap with fragtrap constructor
     FragTrap MO("MO");
 
     std::cout << "JELMER attack points		" << JELMER.getAttackDamage() << std::endl;
@@ -20,8 +21,8 @@ int main(void)
     std::cout << "MO hit points			" << MO.getHitPoints() << std::endl;
     std::cout << "MO energy points		" << MO.getEnergyPoints() << std::endl;
 
-    THIRZA.attack("THIRZA");
-    JELMER.takeDamage(20);
+   THIRZA.attack("THIRZA");
+   JELMER.takeDamage(20);
     MO.highFivesGuys();
     JELMER.beRepaired(2);
     JELMER.guardGate();
@@ -37,10 +38,9 @@ int main(void)
     std::cout << "MO attack points		" << MO.getAttackDamage() << std::endl;
     std::cout << "MO hit points			" << MO.getHitPoints() << std::endl;
     std::cout << "MO energy points		" << MO.getEnergyPoints() << std::endl;
-    // THIRZA.attack("JELMER");
-    // JELMER.takeDamage(20);
-    // ScavTrap MO("MO"); 
-    // JELMER.attack("MO");
+    THIRZA.attack("JELMER");
+    JELMER.takeDamage(20);
+    JELMER.attack("MO");
 
     return (0);
 }

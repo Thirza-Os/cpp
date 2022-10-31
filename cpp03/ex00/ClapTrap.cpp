@@ -28,14 +28,15 @@ ClapTrap::ClapTrap(const ClapTrap& copy)
 }
 
 //call with example3 = example_2;
+// uses getters to get the private members Is this necessary???
 ClapTrap& ClapTrap::operator=(ClapTrap& other)
 {
     if (this != &other)
     {
-        this->_name = other._name;
-        this->_attackDamage = other._attackDamage;
-        this->_energyPoints = other._energyPoints;
-        this->_hitPoints = other._hitPoints;
+        this->_name = other.getName();
+        this->_attackDamage = other.getAttackDamage();
+        this->_energyPoints = other.getEnergyPoints();
+        this->_hitPoints = other.getHitPoints();
     }
     std::cout << "assignment operator called" << std::endl;
     return (*this);
@@ -79,17 +80,22 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 									// GETTERS
 
+std::string     ClapTrap::getName(void)
+{
+		return (this->_name);
+}
+
 int     ClapTrap::getHitPoints(void)
 {
-		return (_hitPoints);
+		return (this->_hitPoints);
 }
 
 int     ClapTrap::getEnergyPoints(void)
 {
-		return (_energyPoints);
+		return (this->_energyPoints);
 }
 
 int     ClapTrap::getAttackDamage(void)
 {
-		return (_attackDamage);
+		return (this->_attackDamage);
 }

@@ -11,12 +11,12 @@ ClapTrap::ClapTrap(std::string name): _name(name)
     this->_attackDamage	= 0;
     this->_energyPoints	= 10;
     this->_hitPoints	= 10;
-    std::cout << this->_name << "		joined the party (ClapTrap constructor)" << std::endl;
+    std::cout << this->_name << "		joined the party (ClapTrap constructor with parameter)" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << this->_name << "ClapTrap destructor is called" << std::endl;
+    std::cout << this->_name << " ClapTrap destructor is called" << std::endl;
 }
 
 // call with ClapTrap sample_2(sample_1) or ClapTrap example3 = example_2;
@@ -27,7 +27,7 @@ ClapTrap::ClapTrap(const ClapTrap& copy)
     this->_attackDamage = copy._attackDamage;
     this->_energyPoints = copy._energyPoints;
     this->_hitPoints = copy._hitPoints;
-    std::cout << "copy constructor called" << std::endl;
+    std::cout << "copy constructor CalpTrap called" << std::endl;
     // *this = copy;
 }
 
@@ -83,17 +83,22 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 									// GETTERS
 
+std::string     ClapTrap::getName(void)
+{
+		return (this->_name);
+}
+
 int     ClapTrap::getHitPoints(void)
 {
-		return (_hitPoints);
+		return (this->_hitPoints);
 }
 
 int     ClapTrap::getEnergyPoints(void)
 {
-		return (_energyPoints);
+		return (this->_energyPoints);
 }
 
 int     ClapTrap::getAttackDamage(void)
 {
-		return (_attackDamage);
+		return (this->_attackDamage);
 }
