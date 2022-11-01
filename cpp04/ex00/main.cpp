@@ -29,16 +29,19 @@
 
 int main()
 {
-const Animal* meta = new Animal();
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-const WrongAnimal* k = new WrongCat();
-std::cout << j->getType() << " " << std::endl;
-std::cout << i->getType() << " " << std::endl;
-std::cout << k->getType() << " " << std::endl;
-i->makeSound(); //will output the cat sound!
-j->makeSound();
-k->makeSound();
-meta->makeSound();
-return 0;
+    const Animal* meta = new Animal();
+    const Animal* pointerDog = new Dog();
+    const Animal* pointerCat = new Cat();
+    const WrongAnimal* pointer_WrongAnimal = new WrongCat();
+
+    std::cout << meta->getType() << " " << std::endl;
+    std::cout << pointer_WrongAnimal->getType() << " " << std::endl;
+    std::cout << pointerCat->getType() << " " << std::endl;
+    std::cout << pointerDog->getType() << " " << std::endl;
+
+    pointerCat->makeSound(); //will output the cat sound!
+    pointerDog->makeSound();
+    pointer_WrongAnimal->makeSound();
+    meta->makeSound();
+    return 0;
 }

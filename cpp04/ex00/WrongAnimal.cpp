@@ -8,7 +8,8 @@ WrongAnimal::WrongAnimal()
 
 WrongAnimal::WrongAnimal(WrongAnimal &copy)
 {
-    this->type = copy.type;
+    *this = copy;
+    std::cout << "copy constructor Wrong Animal class" << std::endl;
 }
 
 WrongAnimal& WrongAnimal::operator=(WrongAnimal &other)

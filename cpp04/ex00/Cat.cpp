@@ -13,7 +13,7 @@ Cat::~Cat()
 
 Cat::Cat(Cat &copy): Animal(copy)
 {
-    this->type = copy.type;
+    *this = copy;
     std::cout << "Copy constructor Cat class called" << std::endl;
 }
 
