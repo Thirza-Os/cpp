@@ -1,4 +1,4 @@
-NAME 	=	fixed
+NAME 	=	fixedOverload
 
 SRC		=	main.cpp \
 			Fixed.cpp \

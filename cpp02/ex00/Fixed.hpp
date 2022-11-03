@@ -31,6 +31,7 @@ public:
 // Copy assignment operator overload
 	Fixed& operator=(const Fixed& copy);
 
+	// getter and setter
 	int		getRawBits(void) const;
 	void	setRawBits(int const raw);
 };

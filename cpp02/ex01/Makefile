@@ -1,4 +1,4 @@
-NAME 	=	fixed
+NAME 	=	FixedConversion
 
 SRC		=	main.cpp \
 			Fixed.cpp \

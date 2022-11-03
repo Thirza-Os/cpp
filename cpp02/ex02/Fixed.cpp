@@ -2,7 +2,7 @@
 
 // >> bitshifting moves each digit in a binary representation left(* 2^n) or right(times /2)
 
-// CONSTRUCT/DESTRUCT
+// CONSTRUCTER/DESTRUCTERS
 
 //default assigning 0 to _raw bits without func
 Fixed::Fixed(): _raw_bits(0)
@@ -49,11 +49,13 @@ Fixed& Fixed::operator=(const Fixed& other)
 
 int		Fixed::getRawBits(void) const
 {
+    std::cout << "GetRawBits function called" << std::endl;
     return (this->_raw_bits);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
+    std::cout << "SetRawBits function called" << std::endl;
     this->_raw_bits = raw;
 }
 
@@ -67,7 +69,7 @@ int		Fixed::toInt(void) const
 	return (this->_raw_bits >> this->_fract_bits);
 }
 
-std::ostream & operator<<(std::ostream & stream, const Fixed & inst)
+std::ostream & operator<<(std::ostream & stream, Fixed const & inst)
 {
     stream << inst.toFloat();
     return (stream);
@@ -108,22 +110,22 @@ bool    Fixed::operator!=(const Fixed& another) const
 
 // Artihmetic operators: arythmatic with float numbers: return immediatly otherwise expression result unused.
 
-Fixed   Fixed::operator+(const Fixed& another)
+Fixed   Fixed::operator+(const Fixed& another) const
 {
     return(this->toFloat() + another.toFloat());
 }
 
-Fixed   Fixed::operator-(const Fixed& another)
+Fixed   Fixed::operator-(const Fixed& another) const
 {
     return(this->toFloat() - another.toFloat());
 }
 
-Fixed   Fixed::operator*(const Fixed& another)
+Fixed   Fixed::operator*(const Fixed& another) const
 {
     return(this->toFloat() * another.toFloat());
 }
 
-Fixed   Fixed::operator/(const Fixed& another)
+Fixed   Fixed::operator/(const Fixed& another) const
 {
     return(this->toFloat() / another.toFloat());
 }
@@ -178,7 +180,7 @@ Fixed	&	Fixed::max(Fixed& first, Fixed& second)
 
 // public overloaded member functions const
 
-Fixed const&	Fixed::min(const Fixed& first, const Fixed& second)
+const Fixed &	Fixed::min(const Fixed& first, const Fixed& second)
 {
     if (first < second)
         return (first);
@@ -186,7 +188,7 @@ Fixed const&	Fixed::min(const Fixed& first, const Fixed& second)
         return (second);
 }
 
-Fixed const&	Fixed::max(const Fixed& first, const Fixed& second)
+const Fixed &	Fixed::max(const Fixed& first, const Fixed& second)
 {
     if (first > second)
         return (first);

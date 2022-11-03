@@ -42,11 +42,11 @@ public:
 	bool	operator==(const Fixed& another) const;
 	bool	operator!=(const Fixed& another) const;
 
-	//Artihmetic operators: return updated instance: only parameter class is const
-	Fixed operator+(const Fixed& another);
-	Fixed operator-(const Fixed& another);
-	Fixed operator*(const Fixed& another);
-	Fixed operator/(const Fixed& another);
+	//Artihmetic operators: return updated instance: only parameter class is const (made both const for testing)
+	Fixed operator+(const Fixed& another) const;
+	Fixed operator-(const Fixed& another) const;
+	Fixed operator*(const Fixed& another) const;
+	Fixed operator/(const Fixed& another) const;
 
 	// postfix increment/decrement (return old value cuz it happens later)
 	Fixed	operator++( int );
@@ -61,12 +61,12 @@ public:
 	static Fixed &	min(Fixed& first, Fixed& second);
 	static Fixed &	max(Fixed& first, Fixed& second);
 
-	static Fixed const&	min(const Fixed& first, const Fixed& second);
-	static Fixed const&	max(const Fixed& first, const Fixed& second);
+	static const Fixed & min(const Fixed& first, const Fixed& second);
+	static const Fixed & max(const Fixed& first, const Fixed& second);
 
 
 };
 
-	std::ostream & operator<<(std::ostream & stream, const Fixed & inst);
+	std::ostream & operator<<(std::ostream & stream, Fixed const & inst);
 
 #endif
