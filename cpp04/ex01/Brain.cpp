@@ -15,7 +15,7 @@ Brain& Brain::operator=(Brain &other)
     if (this != &other)
     {
         for(int i = 0; i < 100; i++)
-        this->ideas[i] = other.ideas[i];
+        this->setIdea(other.getIdea(i), i);
     }
     std::cout << "assignment operator Brain called" << std::endl;
     return(*this);
@@ -26,7 +26,7 @@ Brain::~Brain()
     std::cout << "Deconstructing Brain class" << std::endl;
 }
 
-std::string Brain::GetIdea(int index)
+std::string Brain::getIdea(int index)
 {
     if (index < 0 || index > 100)
     {
@@ -36,7 +36,7 @@ std::string Brain::GetIdea(int index)
     return(this->ideas[index]);
 }
 
-void        Brain::SetIdea(std::string idea, int index)
+void        Brain::setIdea(std::string idea, int index)
 {
     if (index < 0 || index > 100)
     {

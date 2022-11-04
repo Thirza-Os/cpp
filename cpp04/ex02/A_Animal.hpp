@@ -20,6 +20,7 @@ public:
     A_Animal& operator=(A_Animal& other);
     virtual ~A_Animal();
     
+    //making this member function abstract (not instantibale)
     virtual void makeSound(void) const = 0;
 
     const std::string   &getType(void) const;

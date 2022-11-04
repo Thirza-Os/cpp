@@ -15,8 +15,8 @@ public:
     virtual ~Brain();
 
     // getter and setters for ideas
-    std::string GetIdea(int index);
-    void        SetIdea(std::string idea, int index);
+    std::string getIdea(int index);
+    void        setIdea(std::string idea, int index);
 };
 
 #endif

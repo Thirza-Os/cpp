@@ -41,7 +41,10 @@ Cat::Cat(Cat &copy): Animal(copy)
 Cat&    Cat::operator=(Cat &other)
 {
     if (this != &other)
-        this->type = other.type;
+    {
+        type = other.getType();
+        *BrainPointer = *(other.BrainPointer);
+    }
     std::cout << "Assignment operator Cat class called" << std::endl;
     return (*this);
 }
@@ -53,10 +56,10 @@ void    Cat::makeSound(void) const
 
 std::string Cat::getBrainIdea(int index)
 {
-   return BrainPointer->GetIdea(index);
+   return BrainPointer->getIdea(index);
 }
 
 void        Cat::setBrainIdea(std::string idea, int index)
 {
-    BrainPointer->SetIdea(idea, index);
+    BrainPointer->setIdea(idea, index);
 }

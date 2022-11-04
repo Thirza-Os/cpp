@@ -27,8 +27,16 @@ int main(void)
     return (0);
 }
 
+// int main2()
+// {
+// const Animal* j = new Dog();
+// const Animal* i = new Cat();
+// delete j;//should not create a leak
+// delete i;
+// return 0;
+// }
 
-// int main(void)
+// int main2(void)
 // {
 //     const Animal* AnimalArray[20];
 

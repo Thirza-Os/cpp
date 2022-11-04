@@ -38,7 +38,10 @@ Dog::Dog(Dog &copy): A_Animal(copy)
 Dog&    Dog::operator=(Dog &other)
 {
     if (this != &other)
+    {
         this->type = other.type;
+        *BrainPointer = *(other.BrainPointer);
+    }
     std::cout << "Assignment operator Dog class called" << std::endl;
     return (*this);
 }

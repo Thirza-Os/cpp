@@ -41,7 +41,10 @@ Cat::Cat(Cat &copy): A_Animal(copy)
 Cat&    Cat::operator=(Cat &other)
 {
     if (this != &other)
+    {
         this->type = other.type;
+        *BrainPointer = *(other.BrainPointer);
+    }
     std::cout << "Assignment operator Cat class called" << std::endl;
     return (*this);
 }

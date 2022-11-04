@@ -15,7 +15,7 @@ Brain& Brain::operator=(Brain &other)
     if (this != &other)
     {
         for(int i = 0; i < 100; i++)
-        this->ideas[i] = other.ideas[i];
+        this->SetIdea(other.GetIdea(i), i);
     }
     std::cout << "assignment operator Brain called" << std::endl;
     return(*this);
