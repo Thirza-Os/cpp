@@ -32,6 +32,14 @@ public:
     int         getEnergyPoints(void) const;
     int         getAttackDamage(void) const;
 
+    // setters
+    // used to set member functions
+    void    setName(std::string name);
+    void    setHitPoints(int hitPoints);
+    void    setEnergyPoints(int energyPoints);
+    void    setAttackDamage(int attackDamage);
+
+
 };
 
 #endif

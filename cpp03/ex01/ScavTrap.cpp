@@ -3,7 +3,7 @@
 // constructor/destructor exlicitely calling the parent constructor and explicitely child constructors.
 	ScavTrap::ScavTrap(): ClapTrap()
 	{	
-		std::cout << "ScavTrap constructor is called! " << std::endl;
+		std::cout << "ScavTrap default constructor is called! " << std::endl;
 	}
 
 	ScavTrap::ScavTrap(const ScavTrap &copy): ClapTrap(copy)
@@ -13,23 +13,17 @@
 
 	ScavTrap::ScavTrap(std::string name): ClapTrap(name)
 	{	
-		this->_name = name;
 		this->_attackDamage	= 20;
     	this->_energyPoints	= 50;
     	this->_hitPoints	= 100;
-		std::cout << "ScavTrap constructor is called! " << name << std::endl;
+		std::cout << name << "		ScavTrap joined the party" << std::endl;
 	}
 
 
 	ScavTrap& ScavTrap::operator=(ScavTrap& other)
 	{
 		if (this != &other)
-		{
-			this->_name = other._name;
-			this->_attackDamage = other._attackDamage;
-			this->_energyPoints = other._energyPoints;
-			this->_hitPoints = other._hitPoints;
-		}
+			*this = other;
 		std::cout << "assignment operator called" << std::endl;
 		return (*this);
 	}
@@ -45,6 +39,8 @@ void    ScavTrap::attack(const std::string& target)
 	{
 		std::cout << this->_name << "		ScavTrap attacks " << target << " " << this->_attackDamage << " amount of damage!!!" << std::endl;
 		this->_energyPoints--;
+		if (_energyPoints == 0)
+			std::cout << this->_name << "is now out of energy points" << std::endl;
 	}
 	else
 		std::cout << this->_name << "		ScavTrap not enough energy points brahvosky" << std::endl;
@@ -52,5 +48,5 @@ void    ScavTrap::attack(const std::string& target)
 
 void 	ScavTrap::guardGate()
 {
-	std::cout << "Scavvy is in guard keeping mode" << std::endl;
+	std::cout << this->_name << "		Scavvy is in guard keeping mode" << std::endl;
 }

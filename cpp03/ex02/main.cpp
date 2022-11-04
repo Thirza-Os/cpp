@@ -4,11 +4,11 @@
 
 int main(void)
 {
-    ClapTrap();
+    // ClapTrap();
     ClapTrap THIRZA("THIRZA");
-    ScavTrap thirza; //making scavtrap with scavtrap constructor
+    // ScavTrap thirza; //making scavtrap with scavtrap constructor -> without name so will output empty exit
     ScavTrap JELMER("JELMER"); 
-    FragTrap Mo; // making fragtrap with fragtrap constructor
+    // FragTrap MO; // making fragtrap with fragtrap constructor -> without name so will output empty exit
     FragTrap MO("MO");
 
     std::cout << "JELMER attack points		" << JELMER.getAttackDamage() << std::endl;

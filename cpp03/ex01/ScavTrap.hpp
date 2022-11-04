@@ -14,6 +14,7 @@ public:
 	ScavTrap(std::string name);
 	ScavTrap(const ScavTrap &copy);
 	~ScavTrap();
+
 	ScavTrap&   operator=(ScavTrap& other);
 
 	void    attack(const std::string& target);

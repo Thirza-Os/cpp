@@ -8,7 +8,6 @@ FragTrap::FragTrap(): ClapTrap()
 // explicitely calling claptrap with parameter otherwise without is called
 FragTrap::FragTrap(std::string name): ClapTrap(name)
 {
-	this->_name = name;
 	this->_attackDamage = 30;
 	this->_energyPoints = 100;
 	this->_hitPoints = 100;

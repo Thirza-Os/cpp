@@ -4,7 +4,6 @@
 #include <iostream>
 #include <string>
 
-// SUPER CLASS
 class ClapTrap
 {
 protected:
@@ -14,21 +13,34 @@ protected:
     int			_attackDamage;
 
 public:
+    // constructors/destructors
     ClapTrap();
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& copy);
     ~ClapTrap();
-    ClapTrap&   operator=(ClapTrap& other);
 
+    ClapTrap&   operator=(const ClapTrap& other);
+
+    // member functions
     void    attack(const std::string& target);
     void    takeDamage(unsigned int amount);
     void    beRepaired(unsigned int amount);
 
     //getters
-    std::string getName(void);
-    int         getHitPoints(void);
-    int         getEnergyPoints(void);
-    int         getAttackDamage(void);
+    // used to access the private member functions from outside the class
+    std::string getName(void) const;
+    int         getHitPoints(void) const;
+    int         getEnergyPoints(void) const;
+    int         getAttackDamage(void) const;
+
+    // setters
+    // used to set member functions
+    void    setName(std::string name);
+    void    setHitPoints(int hitPoints);
+    void    setEnergyPoints(int energyPoints);
+    void    setAttackDamage(int attackDamage);
+
+
 };
 
 #endif
