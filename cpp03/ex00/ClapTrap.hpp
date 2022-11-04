@@ -18,7 +18,7 @@ public:
     ClapTrap(std::string name);
     ClapTrap(const ClapTrap& copy);
     ~ClapTrap();
-    ClapTrap&   operator=(ClapTrap& other);
+    ClapTrap&   operator=(const ClapTrap& other);
 
     // member functions
     void    attack(const std::string& target);
@@ -27,10 +27,10 @@ public:
 
     //getters
     // used to access the private member functions from outside the class
-    std::string getName(void);
-    int         getHitPoints(void);
-    int         getEnergyPoints(void);
-    int         getAttackDamage(void);
+    std::string getName(void) const;
+    int         getHitPoints(void) const;
+    int         getEnergyPoints(void) const;
+    int         getAttackDamage(void) const;
 
 };
 

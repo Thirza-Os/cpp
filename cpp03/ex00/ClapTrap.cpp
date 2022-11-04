@@ -1,12 +1,13 @@
 #include "ClapTrap.hpp"
 
 									// CONSTRUCTERS/DESTRUCTOR
-
-ClapTrap::ClapTrap(std::string name): _name(name)
+ClapTrap::ClapTrap()
 {
-    this->_attackDamage	= 0;
-    this->_energyPoints	= 10;
-    this->_hitPoints	= 10;
+    std::cout << this->_name << "Claptrap default constructor called" << std::endl;
+}
+
+ClapTrap::ClapTrap(std::string name): _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0)
+{
     std::cout << this->_name << "		joined the party" << std::endl;
 }
 
@@ -19,17 +20,13 @@ ClapTrap::~ClapTrap()
 // new instance
 ClapTrap::ClapTrap(const ClapTrap& copy)
 {
-    this->_name = copy._name;
-    this->_attackDamage = copy._attackDamage;
-    this->_energyPoints = copy._energyPoints;
-    this->_hitPoints = copy._hitPoints;
-    std::cout << "copy constructor called" << std::endl;
-    // *this = copy;
+    std::cout << "ClapTrap copy constructor called" << std::endl;
+    *this = copy;
 }
 
 //call with example3 = example_2;
 // uses getters to get the private members Is this necessary???
-ClapTrap& ClapTrap::operator=(ClapTrap& other)
+ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
     if (this != &other)
     {
@@ -50,6 +47,8 @@ void    ClapTrap::attack(const std::string& target)
 	{
 		std::cout << this->_name << "		attacks " << target << " " << this->_attackDamage << " amount of damage!!!" << std::endl;
 		this->_energyPoints--;
+		if (_energyPoints == 0)
+				std::cout << this->_name << "is out of energy points" << std::endl;
 	}
 	else
 		std::cout << this->_name << "		Not enough energy points brahvosky" << std::endl;
@@ -73,6 +72,8 @@ void    ClapTrap::beRepaired(unsigned int amount)
 		int new_hit = this->_hitPoints + amount;
 		this->_hitPoints = new_hit;
 		this->_energyPoints--;
+		if (_energyPoints == 0)
+			std::cout << this->_name << "is out of energy points" << std::endl;
 	}
 	else
 		std::cout << this->_name << "		Not enough energypoints brah" << std::endl;
@@ -80,22 +81,22 @@ void    ClapTrap::beRepaired(unsigned int amount)
 
 									// GETTERS
 
-std::string     ClapTrap::getName(void)
+std::string     ClapTrap::getName(void) const
 {
 		return (this->_name);
 }
 
-int     ClapTrap::getHitPoints(void)
+int     ClapTrap::getHitPoints(void) const
 {
 		return (this->_hitPoints);
 }
 
-int     ClapTrap::getEnergyPoints(void)
+int     ClapTrap::getEnergyPoints(void) const 
 {
 		return (this->_energyPoints);
 }
 
-int     ClapTrap::getAttackDamage(void)
+int     ClapTrap::getAttackDamage(void)const
 {
 		return (this->_attackDamage);
 }
