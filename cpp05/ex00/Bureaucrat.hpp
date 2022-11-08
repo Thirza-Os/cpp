@@ -7,8 +7,8 @@
 class Bureaucrat
 {
 private:
-    const std::string   name;
     int                 _grade;
+    const std::string   _name;
 
 public:
     // exception classes overloading the std::exeption 
@@ -31,7 +31,7 @@ public:
     };
 
     // constructors/destructors
-    Bureaucrat(int grade);
+    Bureaucrat(int grade, std::string name);
     Bureaucrat(Bureaucrat&  copy);
     Bureaucrat& operator=(Bureaucrat &other);
     ~Bureaucrat();

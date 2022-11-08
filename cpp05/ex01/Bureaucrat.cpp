@@ -1,6 +1,6 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(int grade): name("Thirza"), _grade(grade)
+Bureaucrat::Bureaucrat(int grade, std::string name): _grade(grade), _name(name)
 {
     if (grade > 150)
         throw (TooLowException());
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(Bureaucrat&  copy)
     std::cout << "Copy consructor Bureaucrat called" << std::endl;
 }
 
-Bureaucrat& Bureaucrat::operator=(Bureaucrat &other)
+Bureaucrat& Bureaucrat::operator=(const Bureaucrat &other)
 {
     if (this != &other)
     {
@@ -44,18 +44,33 @@ void    Bureaucrat::decrementGrade()
     this->_grade--;
 }
 
-int     Bureaucrat::getGrade(void) const
+// getters
+const int& Bureaucrat::getGrade(void) const
 {
     return(this->_grade);
 }
 
 const std::string&  Bureaucrat::getName(void) const
 {
-    return(this->name);
+    return(this->_name);
+}
+
+//setters
+void    Bureaucrat::setGrade(const int grade)
+{
+    this->_grade = grade;
 }
 
 std::ostream & operator<<(std::ostream & stream, const Bureaucrat & inst)
 {
     stream << "bureaucrat name " << inst.getName() << " Bureaucrat grade: "<< inst.getGrade(); 
     return (stream);
+}
+
+// form funtrion
+
+void    Bureaucrat::signForm(Form &form)
+{
+    if (form.getIsSigned() == true)
+        std::cout << this->_name << " signed " << form.getName() << " form" << std::endl;
 }
