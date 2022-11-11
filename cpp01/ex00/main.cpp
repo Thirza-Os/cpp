@@ -19,6 +19,6 @@ int main(void)
     delete (dead_person);
 
     // stack (same as first but announces itself)
-    randomChump("idiot");
+    RandomChump("idiot");
     return (0);
 }

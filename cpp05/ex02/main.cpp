@@ -4,8 +4,6 @@
 #include "PresidentialPardonForm.hpp"
 #include "Form.hpp"
 
-// build a good test main!!
-
 int main()
 {
     // number to high
@@ -59,8 +57,7 @@ int main()
 //      {
 //           std::cout << e.what();
 //           std::cout << std::endl;
-//      }
-
+     //  }
 
      // testing form types
 
@@ -100,3 +97,47 @@ int main()
      trySigning2.executeForm(pressie);
 
 }
+
+
+// 1 will work, 160 will not work 
+
+// int main(void)
+// {
+// 	try
+// 	{
+// 		Bureaucrat human(1, "oliver");
+// 		ShrubberyCreationForm myTree("mjung");
+// 		RobotomyRequestForm robotomy("tommy");
+// 		PresidentialPardonForm pardon("nice dog");
+
+// 		// 사람 등급 출력
+// 		std::cout << human << std::endl;
+
+// 		 // 각각의 폼에 대한 정보 출력
+// 		std::cout << robotomy << std::endl;
+// 		std::cout << myTree << std::endl;
+// 		std::cout << pardon << std::endl;
+
+// 		// 각각의 폼에 싸인 시도
+// 		myTree.beSigned(human);
+// 		robotomy.beSigned(human);
+// 		pardon.beSigned(human);
+
+// 		// 각각의 폼에 싸인이 되었는지 확인
+// 		human.signForm(myTree);
+// 		human.signForm(robotomy);
+// 		human.signForm(pardon);
+
+// 		// 싸인이 되어있고, 실행등급이 충분하다면 실행
+// 		// 권한 부족시 예외 처리
+// 		myTree.execute(human);
+// 		robotomy.execute(human);
+// 		pardon.execute(human);
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cerr << e.what() << std::endl;
+// 	}
+
+// 	return (0);
+// }
