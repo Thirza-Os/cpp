@@ -1,12 +1,20 @@
 #include "Convert.hpp"
 // add multiple ..... error handling
 
+enum Types {
+    intType, 
+    doubleType, 
+    charType, 
+    floatType,
+    undefined
+    };
+
 Convert::Convert()
 {
     std::cout << "Constructor Convert called" << std::endl;
 }
 
-Convert::Convert(std::string const input): _input(input)
+Convert::Convert(std::string const input): _input(input), _type(undefined)
 {
     std::cout << "Constructor with parameter convert called" << std::endl;
 }
@@ -27,6 +35,12 @@ Convert& Convert::operator=(const Convert & other)
     std::cout << "Assign operator Convert called" << &other << std::endl;
     return (*this);
 }
+
+const int& Convert::getType(void) const
+{
+    return (this->_type);
+}
+
 bool Convert::validateInput()
 {
     int count = 0;
@@ -43,23 +57,25 @@ bool Convert::validateInput()
     return (true);
 }
 
+// Continue skips the occurances
 bool Convert::IsInt()
 {
-    for (size_t i = 0; i < this->_input.size(); ++i)
+    for (size_t i = 0; i < this->_input.size(); i++)
     {
         if (i == 0 && (this->_input[i] == '-' || this->_input[i] == '+')) continue;
         if (!isdigit(this->_input[i]))
             return(false);
     }
+    this->_type = intType;
     return (true);
 }
 
 bool Convert::IsChar()
 {
-    if (isalpha(this->_input[0]))
+    if (isalpha(this->_input[0] && this->_input.length() == 1))
     {
-        if (this->_input.length() == 1)
-            return (true);
+        this->_type = charType;
+        return (true);
     }
     return (false);
 }
@@ -75,6 +91,7 @@ bool Convert::IsFloat()
             if (!isdigit(this->_input[i]))
                 return (false);
         }
+        this->_type = floatType;
         return (true);
     }
     return (false);
@@ -91,6 +108,7 @@ bool Convert::IsDouble()
             if (!isdigit(this->_input[i]))
                 return (false);
         }
+        this->_type = doubleType;
         return (true);
     }
     return (false);
@@ -98,7 +116,8 @@ bool Convert::IsDouble()
 
 bool    Convert::ConvertInput()
 {
-    validateInput();
+    if (!validateInput())
+        return (false);
     if (!IsInt() && !IsChar() && !IsFloat() && !IsDouble())
         return (false);
     return (true);

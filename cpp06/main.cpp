@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
     if (!Conv.ConvertInput())
     {
         std::cerr << "Not a valid input" << std::endl;
-        exit (1);   
+        exit (1);
     }
+    std::cout << Conv.getType() << std::endl;
 }

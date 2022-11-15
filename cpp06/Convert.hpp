@@ -8,6 +8,7 @@ class   Convert
 {
     private:
         std::string const	_input;
+        int                 _type;
 		
     public:
         Convert();
@@ -15,6 +16,8 @@ class   Convert
         ~Convert();
         Convert(const Convert &copy);
         Convert& operator=(const Convert & other);
+
+        int	const &getType(void) const;
 
         bool IsInt();
         bool IsChar();
