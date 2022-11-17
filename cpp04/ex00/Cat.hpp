@@ -9,7 +9,7 @@ public:
     Cat();
     Cat(Cat &copy);
     Cat& operator=(Cat &other);
-    ~Cat();
+    virtual ~Cat();
 
     virtual void    makeSound(void) const;
 };

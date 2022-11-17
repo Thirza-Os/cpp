@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iostream>
+// virtual destructor to prevent undefined behaviour: ALWAYS use it when you have virtual functions in your class. (makes sure that it destructs both subclass and mom class)
 // method: Function inside class (public/private/protected)
 class Animal
 {

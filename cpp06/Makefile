@@ -1,11 +1,13 @@
 NAME 	=	Convert
 
 SRC     =   main.cpp \
-			Convert.cpp
+			Convert.cpp \
+			Print.cpp
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-HEADER	=	Convert.hpp
+HEADER	=	Convert.hpp \
+			Print.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
 

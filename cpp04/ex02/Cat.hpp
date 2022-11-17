@@ -13,7 +13,7 @@ class Cat: public A_Animal
         Cat();
         Cat(Cat &copy);
         Cat& operator=(Cat &other);
-        ~Cat();
+        virtual ~Cat();
 
         virtual void    makeSound(void) const;
         std::string     getBrainIdea(int index);

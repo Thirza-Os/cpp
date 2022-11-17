@@ -14,8 +14,8 @@ class   Convert
         Convert();
         Convert(std::string const input);
         ~Convert();
-        Convert(const Convert &copy);
-        Convert& operator=(const Convert & other);
+        Convert(Convert &copy);
+        Convert& operator=(Convert & other);
 
         int	const &getType(void) const;
 

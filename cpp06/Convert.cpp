@@ -24,15 +24,16 @@ Convert::~Convert()
     std::cout << " Destructor Convert called" << std::endl;
 }
 
-Convert::Convert(const Convert &copy)
+Convert::Convert(Convert &copy)
 {
     *this = copy;
     std::cout << "Copy const Convert called" << std::endl;
 }
 
-Convert& Convert::operator=(const Convert & other)
+Convert& Convert::operator=(Convert & other)
 {
     std::cout << "Assign operator Convert called" << &other << std::endl;
+    other._type = this->getType();
     return (*this);
 }
 
