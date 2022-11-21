@@ -3,12 +3,14 @@
 
 #include <string>
 #include <iostream>
+#include <limits>
 
 class   Convert
 {
     private:
         std::string const	_input;
         int                 _type;
+		bool				pointFlag;
 		
     public:
         Convert();
@@ -19,6 +21,7 @@ class   Convert
 
         int	const &getType(void) const;
 
+		bool nanInput();
         bool IsInt();
         bool IsChar();
         bool IsDouble();
@@ -26,7 +29,7 @@ class   Convert
 
         bool validateInput();
 
-        bool    ConvertInput();
+        bool ConvertInput();
 };
 
 #endif

@@ -3,16 +3,18 @@
 
 #include <string>
 #include <iostream>
+#include <limits>
+#include <iomanip>
 
 class   Print
 {
     private:
 	    std::string const	_input;
         int                 _type;
-        double	_doubleType;
-		int		_intType;
-		float	_floatType;
-		char	_charType;
+        double	            _doubleType;
+		int		            _intType;
+		float	            _floatType;
+		char	            _charType;
 		
     public:
         Print(std::string input, int type);
@@ -22,11 +24,13 @@ class   Print
 
         void	printDouble(double const doubleType);
         void	printFloat(float const floatType);
-       	void	prinInt(int const intType);
+       	void	printInt(int const intType);
         void	printChar(char charType);
 
 		void	fillTypes(void);
 		void	printTypes(void) const;
+        void    printNans(void);
+        bool    savePrint(void);
 };
 
 #endif

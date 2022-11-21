@@ -17,5 +17,11 @@ int main(int argc, char *argv[])
         std::cerr << "Not a valid input" << std::endl;
         exit (1);
     }
-    std::cout << Conv.getType() << std::endl;
+    Print print(input, Conv.getType());
+    if (!print.savePrint())
+    {
+        std::cerr << "Not a valid input: Out of range" << std::endl;
+        exit (1);
+    }
+
 }
