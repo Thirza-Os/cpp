@@ -1,22 +1,9 @@
-NAME 	=	Exercise02
+NAME 	=	functions
 
-SRC		=	main.cpp \
-			Bureaucrat.cpp \
-			Form.cpp \
-			RobotomyRequestForm.cpp \
-			ShrubberyCreationForm.cpp \
-			PresidentialPardonForm.cpp
+SRC     =   main.cpp
 
-HEADER	=	Bureaucrat.hpp \
-			Form.hpp \
-			RobotomyRequestForm.hpp \
-			ShrubberyCreationForm.hpp \
-			PresidentialPardonForm.hpp	
-
-CC		=	c++
+CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
-
-
 
 OBJECTS	=	$(SRC:.cpp=.o)
 
