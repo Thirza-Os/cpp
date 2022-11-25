@@ -1,6 +1,7 @@
 NAME 	=	Serialization
 
-SRC     =   main.cpp
+SRC     =   main.cpp \
+			Data.cpp
 
 HEADER 	=	Data.hpp
 

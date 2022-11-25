@@ -4,9 +4,9 @@ SRC     =   main.cpp \
 			Base.cpp \
 
 HEADER 	=	Base.hpp \
-			FirstEmpty.hpp \
-			SecondEmpty.hpp \
-			ThirdEmpty.hpp			
+			A.hpp \
+			B.hpp \
+			C.hpp			
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
