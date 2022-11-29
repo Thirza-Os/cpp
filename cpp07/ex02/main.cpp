@@ -11,4 +11,6 @@ int main(void)
     
     Array<int>  B(5);
     std::cout << B[5] << std::endl;
+
+    std::cout << "This size: " << B.Size() << std::endl;
 }

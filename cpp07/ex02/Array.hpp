@@ -50,7 +50,11 @@ public:
 			throw std::out_of_range("This is not a correct index!");
 		return	(this->arr[index]);
 	}
-};
 
+	size_t	Size(void) const
+	{
+		return (this->len);
+	}
+};
 
 #endif
