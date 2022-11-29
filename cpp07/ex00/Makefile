@@ -1,9 +1,11 @@
-NAME 	=	functions
+NAME 	=	whatever
 
-SRC     =   main.cpp
+SRC     =	main.cpp
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
+
+HEADER	=	whatever.hpp
 
 OBJECTS	=	$(SRC:.cpp=.o)
 
