@@ -1,11 +1,10 @@
 #ifndef ITER_HPP
 # define ITER_HPP
 
-#include <cstddef>
 #include <iostream>
 
 template <typename T>
-void swap(T input)
+void increment(T input)
 {
     input++;
 }
@@ -19,8 +18,7 @@ void    iter(ARR *input, size_t len, void (*func)(ARR&))
     }
 }
 
-
-// template to print every type of array.
+// template to print every type of array. Takes reference of the array and thus the size is clear
 // deduces size from its declared type: template functions gets size from the const array (deduces type PRINT from arr)
 template <typename PRINT, size_t n>
 void    printArray(PRINT const(&input)[n])

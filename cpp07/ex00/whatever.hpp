@@ -1,6 +1,7 @@
 #ifndef WHATEVER_HPP
 # define WHATEVER_HPP
 
+// Take the reference to change the content
 template <typename T>
 void swap(T & x, T & y)
 {
