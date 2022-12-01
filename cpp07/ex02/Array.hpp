@@ -15,7 +15,7 @@ private:
 
 public:
     // construction without parameter: empty arr
-    Array<T>(void): arr(NULL), len(0) {	std::cout << "constructor called " << std::endl;}
+    Array<T>(void): arr(NULL), len(0) {std::cout << "constructor called " << std::endl;}
 
     // construction with parameter len: arr of len length
     Array<T>(unsigned int n): arr(new T[n]), len(n) {std::cout << "constructor(parameter) called " << std::endl;}
@@ -57,7 +57,7 @@ public:
 		return	(this->arr[index]);
 	}
 
-	size_t	Size(void) const
+	inline unsigned int	Size(void) const
 	{
 		return (this->len);
 	}
