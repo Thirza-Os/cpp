@@ -9,8 +9,10 @@ int main(void)
     // ScavTrap thirza; //making scavtrap with scavtrap constructor -> without name so will output empty exit
     ScavTrap JELMER("JELMER"); 
     // FragTrap MO; // making fragtrap with fragtrap constructor -> without name so will output empty exit
-    FragTrap MO("MO");
-
+    FragTrap MO = FragTrap("MO");
+    FragTrap test(MO);
+    MO.operator=(test);
+    MO = test;
     std::cout << "JELMER attack points		" << JELMER.getAttackDamage() << std::endl;
     std::cout << "JELMER hit points		" << JELMER.getHitPoints() << std::endl;
     std::cout << "JELMER energy points		" << JELMER.getEnergyPoints() << std::endl;
