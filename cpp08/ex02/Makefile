@@ -1,7 +1,6 @@
 NAME 	=	MutantStack
 
-SRC     =	main.cpp \
-			MutantStack.cpp
+SRC     =	main.cpp 
 
 CC		=	g++
 CFLAGS	=	-Wall -Wextra -Werror -std=c++98
